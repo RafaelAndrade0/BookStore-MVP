@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Bookstore MVP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_not_found">Livro não encontrado!</string>
+
+    <string name="form_label_name">Título</string>
+    <string name="form_label_description">Descrição</string>
+    <string name="form_label_rating">Classificação</string>
+
+    <string name="action_delete">Deletar</string>
+
+    <plurals name="list_hotel_selected">
+        <item quantity="one">1 Selecionado</item>
+        <item quantity="other">%d Selecionados</item>
+    </plurals>
+
+    <string name="message_hotels_deleted">%d itens excluidos</string>
+    <string name="undo">Desfazer</string>
+
+    <string name="action_new_book">Novo Livro</string>
+</resources>
