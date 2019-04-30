@@ -59,9 +59,6 @@ class BookListActivity : AppCompatActivity(),
         when (item?.itemId) {
             R.id.action_info ->
                 Toast.makeText(this, "Info", Toast.LENGTH_SHORT).show()
-            R.id.action_new ->
-//                BookFormFragment().show(supportFragmentManager, "addLivro")
-                Toast.makeText(this, "New", Toast.LENGTH_SHORT).show()
             R.id.action_search ->
                 Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
         }

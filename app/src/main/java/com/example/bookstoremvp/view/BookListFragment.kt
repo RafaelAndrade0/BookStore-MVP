@@ -11,19 +11,22 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.ActionMode
 import androidx.fragment.app.ListFragment
-import com.example.bookstoremvp.MemoryRepository
+import com.example.bookstoremvp.repository.memory.MemoryRepository
 import com.example.bookstoremvp.R
 import com.example.bookstoremvp.contracts.BookListView
 import com.example.bookstoremvp.model.Book
 import com.example.bookstoremvp.presenter.BookListPresenter
 import com.google.android.material.snackbar.Snackbar
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class BookListFragment : ListFragment(),
     BookListView,
     AdapterView.OnItemLongClickListener,
     ActionMode.Callback {
 
-    private val presenter = BookListPresenter(this, MemoryRepository)
+    //    private val presenter = BookListPresenter(this, MemoryRepository)
+    private val presenter: BookListPresenter by inject { parametersOf(this) }
     private var actionMode: ActionMode? = null
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -73,7 +76,7 @@ class BookListFragment : ListFragment(),
         if (item?.itemId == R.id.action_delete) {
             Toast.makeText(requireContext(), "Deletar", Toast.LENGTH_SHORT).show()
             presenter.deleteSelected { book ->
-//                Toast.makeText(requireContext(), "Livros Removidos", Toast.LENGTH_SHORT).show()
+                //                Toast.makeText(requireContext(), "Livros Removidos", Toast.LENGTH_SHORT).show()
             }
         }
         return true
@@ -121,9 +124,6 @@ class BookListFragment : ListFragment(),
     }
 
     override fun updateSelectionCountText(count: Int) {
-//        view?.post {
-//            actionMode?.title = "1 Selecionado"
-//        }
         view?.post {
             actionMode?.title = resources.getQuantityString(
                 R.plurals.list_hotel_selected,

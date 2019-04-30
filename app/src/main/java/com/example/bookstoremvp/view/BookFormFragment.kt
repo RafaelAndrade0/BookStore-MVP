@@ -8,15 +8,18 @@ import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.example.bookstoremvp.MemoryRepository
+import com.example.bookstoremvp.repository.memory.MemoryRepository
 import com.example.bookstoremvp.R
 import com.example.bookstoremvp.contracts.BookFormView
 import com.example.bookstoremvp.model.Book
 import com.example.bookstoremvp.presenter.BookFormPresenter
 import kotlinx.android.synthetic.main.fragment_book_form.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class BookFormFragment : DialogFragment(), BookFormView {
-    private val presenter = BookFormPresenter(this, MemoryRepository)
+//    private val presenter = BookFormPresenter(this, MemoryRepository)
+    private val presenter: BookFormPresenter by inject { parametersOf(this) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_book_form, container, false)

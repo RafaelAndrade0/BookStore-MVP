@@ -4,6 +4,7 @@
           package="com.example.bookstoremvp">
 
     <application
+            android:name=".BookApp"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"

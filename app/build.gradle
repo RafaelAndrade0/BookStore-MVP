@@ -34,4 +34,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
     implementation 'com.google.android.material:material:1.0.0'
+
+    // Koin for Android
+//    implementation 'org.koin:koin-android:2.0.0-rc-2'
+//    // Koin AndroidX Scope feature
+//    implementation 'org.koin:koin-androidx-scope:2.0.0-rc-2'
+
+    implementation 'org.koin:koin-android:1.0.0'
+    implementation 'org.koin:koin-androidx-scope:1.0.0'
 }

@@ -20,4 +20,8 @@
     <string name="undo">Desfazer</string>
 
     <string name="action_new_book">Novo Livro</string>
+    <string name="action_share">Compartilhar</string>
+
+    <string name="share_text">Favoritei o livro %1$s e o classifiquei em %2$.1f estrelas</string>
+    <string name="action_edit">Editar</string>
 </resources>
